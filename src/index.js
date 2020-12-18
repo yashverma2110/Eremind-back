@@ -18,8 +18,9 @@ dotenv.config();
 
 app.use(function (req, res, next) {
   var allowedOrigins = [
-    "http://localhost:3000/",
-    "https://eremind.herokuapp.com/",
+    "http://localhost:3000",
+    "http://eremind.herokuapp.com",
+    "https://eremind.herokuapp.com",
   ];
   var origin = req.headers.origin;
   if (allowedOrigins.indexOf(origin) > -1) {
