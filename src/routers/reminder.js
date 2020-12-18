@@ -83,9 +83,9 @@ router.post("/add/reminder", async (req, res) => {
         task.stop();
       }
     );
-    res.send();
+    res.status(201).json({ reminderTime });
   } catch (error) {
-    res.status(500).json({ error });
+    res.status(500).json({ error: "Some error occured" });
   }
 });
 
