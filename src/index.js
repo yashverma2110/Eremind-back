@@ -17,12 +17,15 @@ dotenv.config();
 //for heroku cors issue
 
 app.use(function (req, res, next) {
-  var allowedOrigins = ["http://localhost:3000"];
+  var allowedOrigins = [
+    "http://localhost:3000/",
+    "https://eremind.herokuapp.com/",
+  ];
   var origin = req.headers.origin;
   if (allowedOrigins.indexOf(origin) > -1) {
     res.header("Access-Control-Allow-Origin", origin);
   } else {
-    res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+    res.header("Access-Control-Allow-Origin", "https://eremind.herokuapp.com/");
   }
   res.header("Access-Control-Allow-Credentials", "true");
   res.header("Access-Control-Allow-Methods", "GET,HEAD,PUT,PATCH,POST,DELETE");

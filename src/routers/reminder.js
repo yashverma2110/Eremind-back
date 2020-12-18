@@ -61,7 +61,7 @@ router.post("/add/reminder", async (req, res) => {
           service: "Gmail",
           auth: {
             user: "test2110x@gmail.com",
-            pass: "Test@2110",
+            pass: process.env.EMAIL_PASS,
           },
         });
 
